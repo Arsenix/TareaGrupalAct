@@ -30,7 +30,6 @@ namespace Kanban.Controllers
                 if (section.Board.OwnerID != User.Identity.GetUserId())
                     return new HttpStatusCodeResult(HttpStatusCode.Forbidden);
                 card.Title = card.Title.Trim();
-                card.CardColor = card.CardColor;
                 db.Cards.Add(card);
                 db.SaveChanges();
                 return RedirectToAction("Index", "Boards", new { id = section.BoardID });
@@ -105,7 +104,6 @@ namespace Kanban.Controllers
             {
                 string[] cards = serializedData.Split('&');
                 int[] order = new int[cards.Length];
-                int categoryID = int.Parse(Parent.Split('&')[0]);
                 int ParentID = int.Parse(Parent.Split('&')[1]);
                 int index = 0;
                 foreach (string c in cards)

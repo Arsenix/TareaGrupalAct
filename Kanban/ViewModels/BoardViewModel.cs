@@ -76,8 +76,7 @@ namespace Kanban.ViewModels
         public IEnumerable<Section> getActiveSections(List<Section> sections, IEnumerable<SectionRow> table)
         {
             List<Section> active = new List<Section>();
-            List<Section> start = new List<Section>();
-            List<Section> end = new List<Section>();
+
             foreach (var row in table)
             {
                 foreach (var item in row.Row)

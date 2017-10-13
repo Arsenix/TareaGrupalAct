@@ -513,7 +513,6 @@ jQuery.extend({
 
 		// Own properties are enumerated firstly, so to speed up,
 		// if last one is own, then all properties are own.
-		for ( key in obj ) {}
 
 		return key === undefined || core_hasOwn.call( obj, key );
 	},
@@ -1188,7 +1187,6 @@ try {
 			var j = target.length,
 				i = 0;
 			// Can't trust NodeList.length
-			while ( (target[j++] = els[i++]) ) {}
 			target.length = j - 1;
 		}
 	};

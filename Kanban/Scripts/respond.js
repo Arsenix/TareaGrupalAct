@@ -179,7 +179,10 @@ window.matchMedia = window.matchMedia || (function(doc, undefined){
 		lastCall,
 		
 		resizeDefer,
-		
+
+		//cached container for 1em value, populated the first time it's needed 
+		eminpx,
+
 		// returns the value of 1em in pixels
 		getEmValue		= function() {
 			var ret,
@@ -212,9 +215,6 @@ window.matchMedia = window.matchMedia || (function(doc, undefined){
 								
 			return ret;
 		},
-		
-		//cached container for 1em value, populated the first time it's needed 
-		eminpx,
 		
 		//enable/disable styles
 		applyMedia			= function( fromResize ){
@@ -334,7 +334,9 @@ window.matchMedia = window.matchMedia || (function(doc, undefined){
 	if( win.addEventListener ){
 		win.addEventListener( "resize", callMedia, false );
 	}
-	else if( win.attachEvent ){
-		win.attachEvent( "onresize", callMedia );
+	else{
+	    if (win.attachEvent) {
+	        win.attachEvent("onresize", callMedia);
+	    }
 	}
 })(this);

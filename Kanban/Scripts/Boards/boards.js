@@ -8,10 +8,10 @@ $(".sortable").sortable({
         return $(element).clone().addClass('dragging');
     },
     start: function (e, ui) {
-        ui.item.show().addClass('ghost')
+        ui.item.show().addClass('ghost');
     },
     stop: function (e, ui) {
-        ui.item.show().removeClass('ghost')
+        ui.item.show().removeClass('ghost');
     },
     handle: "span",
     update: function (event, ui) {
@@ -39,10 +39,10 @@ $(".sortable-section").sortable({
         return $(element).clone().addClass('dragging');
     },
     start: function (e, ui) {
-        ui.item.show().addClass('ghost')
+        ui.item.show().addClass('ghost');
     },
     stop: function (e, ui) {
-        ui.item.show().removeClass('ghost')
+        ui.item.show().removeClass('ghost');
     },
     handle: "span",
     axis: "y",
@@ -74,10 +74,10 @@ $(".sortable-sub-section").sortable({
         return $(element).clone().addClass('dragging');
     },
     start: function (e, ui) {
-        ui.item.show().addClass('ghost')
+        ui.item.show().addClass('ghost');
     },
     stop: function (e, ui) {
-        ui.item.show().removeClass('ghost')
+        ui.item.show().removeClass('ghost');
     },
     handle: "span",
     axis: "y",
@@ -106,10 +106,10 @@ $(".sortable-board").sortable({
         return $(element).clone().addClass('dragging');
     },
     start: function (e, ui) {
-        ui.item.show().addClass('ghost')
+        ui.item.show().addClass('ghost');
     },
     stop: function (e, ui) {
-        ui.item.show().removeClass('ghost')
+        ui.item.show().removeClass('ghost');
     },
     handle: "span",
     axis: "y",
@@ -214,7 +214,7 @@ $(function () {
     $("#delete-board-dialog-form").hide();
     $("#delete-title").val("");
     $("#delete-id").val("");
-    delete_dialog = $("#delete-board-dialog-form").dialog({
+    var delete_dialog = $("#delete-board-dialog-form").dialog({
         autoOpen: false,
         height: 300,
         width: 500,
@@ -229,7 +229,7 @@ $(function () {
     // set up the copy modal
     $("#copy-board-dialog-form").hide();
     $("#copy-id").val("");
-    copy_dialog = $("#copy-board-dialog-form").dialog({
+    var copy_dialog = $("#copy-board-dialog-form").dialog({
         autoOpen: false,
         modal: true,
         height: 150,
@@ -242,7 +242,7 @@ $(function () {
     $("#delete-section-dialog-form").hide();
     $("#delete-section-title").val("");
     $("#delete-section-id").val("");
-    delete_section_dialog = $("#delete-section-dialog-form").dialog({
+    var delete_section_dialog = $("#delete-section-dialog-form").dialog({
         autoOpen: false,
         height: 300,
         width: 500,
@@ -262,7 +262,7 @@ $(function () {
     $("#delete-card-dialog-form").hide();
     $("#delete-card-title").val("");
     $("#delete-card-id").val("");
-    delete_card_dialog = $("#delete-card-dialog-form").dialog({
+    var delete_card_dialog = $("#delete-card-dialog-form").dialog({
         autoOpen: false,
         height: 300,
         width: 500,
